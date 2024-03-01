@@ -1,0 +1,7 @@
+services:
+  genius:
+    image: tomee:8.0.16-jre8-plus
+    volumes:
+      - ./geniusecommerce/target/geniusecommerce-1.0-SNAPSHOT:/usr/local/tomee/webapps/genius
+    ports:
+      - "8080:8080"
