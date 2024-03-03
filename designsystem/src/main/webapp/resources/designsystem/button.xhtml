@@ -5,7 +5,19 @@
     <composite:attribute name="label" required="true" />
   </composite:interface>
   <composite:implementation>
-    <h:button value="#{cc.attrs.label}" />
+    <style>
+      .gds_button {
+        padding: 0.7rem;
+        font-weight: 600;
+        border-radius: 5px;
+      }
+
+      .gds_button_success {
+        background-color: green;
+        color: white;
+      }
+    </style>
+    <h:button value="#{cc.attrs.label}" styleClass="gds_button gds_button_success" />
   </composite:implementation>
 </h:body>
 
