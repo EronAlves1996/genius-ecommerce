@@ -3,6 +3,7 @@
 <h:body>
   <composite:interface>
     <composite:attribute name="label" required="true" />
+    <composite:attribute name="type" type="com.eronalves.ButtonType" default="SUCCESS" />
   </composite:interface>
   <composite:implementation>
     <style>
@@ -17,7 +18,7 @@
         color: white;
       }
     </style>
-    <h:button value="#{cc.attrs.label}" styleClass="gds_button gds_button_success" />
+    <h:button value="#{cc.attrs.label}" styleClass="gds_button gds_button_#{cc.attrs.type.toString().toLowerCase()}" />
   </composite:implementation>
 </h:body>
 
