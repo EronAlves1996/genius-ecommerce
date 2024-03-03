@@ -21,6 +21,11 @@
       .gds_button_failure {
         background-color: red;
       }
+
+      .gds_button_neutral {
+        background-color: yellow;
+        color: black;
+      }
     </style>
     <h:button value="#{cc.attrs.label}" styleClass="gds_button gds_button_#{cc.attrs.type.toString().toLowerCase()}" />
   </composite:implementation>
