@@ -11,11 +11,15 @@
         padding: 0.7rem;
         font-weight: 600;
         border-radius: 5px;
+        color: white;
       }
 
       .gds_button_success {
         background-color: green;
-        color: white;
+      }
+
+      .gds_button_failure {
+        background-color: red;
       }
     </style>
     <h:button value="#{cc.attrs.label}" styleClass="gds_button gds_button_#{cc.attrs.type.toString().toLowerCase()}" />
