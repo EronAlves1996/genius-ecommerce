@@ -5,9 +5,7 @@
     <composite:attribute name="label" required="true" />
   </composite:interface>
   <composite:implementation>
-    <h:button>
-      #{cc.attrs.label}
-    </h:button>
+    <h:button value="#{cc.attrs.label}" />
   </composite:implementation>
 </h:body>
 
