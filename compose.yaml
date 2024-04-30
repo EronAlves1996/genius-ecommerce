@@ -1,0 +1,9 @@
+services:
+  products-database:
+    image: postgres
+    shm_size: 128mb
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: gennius-products
+    ports:
+      - 5432:5432
