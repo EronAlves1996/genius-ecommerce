@@ -3,6 +3,7 @@ services:
     image: postgres
     shm_size: 128mb
     environment:
+      POSTGRES_USER: root
       POSTGRES_PASSWORD: root
       POSTGRES_DB: gennius-products
     ports:
