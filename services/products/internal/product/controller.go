@@ -1,11 +1,15 @@
 package product
 
-import "github.com/gin-gonic/gin"
+import (
+	"database/sql"
 
-func RegisterController(r *gin.Engine) {
+	"github.com/gin-gonic/gin"
+)
+
+func RegisterController(r *gin.Engine, db *sql.DB) {
 
 	r.GET("/products", func(c *gin.Context) {
-		ps, err := GetAll()
+		ps, err := GetAll(db)
 		if err != nil {
 			c.Error(err)
 		}

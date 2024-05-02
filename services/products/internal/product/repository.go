@@ -2,16 +2,7 @@ package product
 
 import "database/sql"
 
-func GetAll() ([]Product, error) {
-	connStr := "postgres://root:root@localhost:5432/gennius-products?sslmode=disable"
-	db, err := sql.Open("postgres", connStr)
-
-	if err != nil {
-		return nil, err
-	}
-
-	defer db.Close()
-
+func GetAll(db *sql.DB) ([]Product, error) {
 	rows, err := db.Query("SELECT * FROM product")
 
 	if err != nil {
