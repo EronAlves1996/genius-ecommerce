@@ -1,8 +1,9 @@
 package product
 
-import "database/sql"
+import "github.com/EronAlves1996/services/products/db"
 
-func GetAll(db *sql.DB) ([]Product, error) {
+func GetAll() ([]Product, error) {
+	db := db.GetConnection()
 	rows, err := db.Query("SELECT * FROM product")
 
 	if err != nil {

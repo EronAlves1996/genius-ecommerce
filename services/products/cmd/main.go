@@ -1,7 +1,6 @@
 package main
 
 import (
-	"database/sql"
 	"log"
 
 	"github.com/EronAlves1996/services/products/internal/product"
@@ -13,8 +12,7 @@ import (
 
 func main() {
 	doMigration()
-	db := createDbConnection()
-	g := registerControllers(db)
+	g := registerControllers()
 	g.Run(":8080")
 }
 
@@ -30,17 +28,8 @@ func doMigration() {
 	}
 }
 
-func createDbConnection() *sql.DB {
-	connStr := "postgres://root:root@localhost:5432/gennius-products?sslmode=disable"
-	db, err := sql.Open("postgres", connStr)
-	if err != nil {
-		log.Fatal(err)
-	}
-	return db
-}
-
-func registerControllers(db *sql.DB) *gin.Engine {
+func registerControllers() *gin.Engine {
 	g := gin.Default()
-	product.RegisterController(g, db)
+	product.RegisterController(g)
 	return g
 }
